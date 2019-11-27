@@ -1,5 +1,8 @@
 # Client
 
+##TO VIEW THE SERVER CODE
+https://github.com/RudyAttia/project4-RudyShop-server.git
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
 ## Development server
