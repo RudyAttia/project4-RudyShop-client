@@ -18,12 +18,13 @@ export class AdminComponent implements OnInit {
   public theSearch = "";
   public newProduct;
   public ifPopupAdd = false
-  public pathImgPopup = "http://localhost:5000/imgs/add-photo.png"
+  public pathImgPopup = this.shopService.GlobalyPath+"/imgs/add-photo.png"
   public imgToAdd = "no-img.png"
   public currentProductId = -1
   public ifDisplay = false
   public ifModify = false
   public messageHere = "Chose category or do a search"
+  public GlobalyPathInto = this.shopService.GlobalyPath;
 
   ngOnInit() {
 
@@ -77,7 +78,7 @@ export class AdminComponent implements OnInit {
       this.newProduct.controls['product_name'].setValue(data.product_name)
       this.newProduct.controls['category_id'].setValue(data.category_id)
       this.newProduct.controls['price'].setValue(data.price)
-      this.pathImgPopup = "http://localhost:5000/products-imgs/" + data.img
+      this.pathImgPopup = this.shopService.GlobalyPath+"/products-imgs/" + data.img
       this.imgToAdd = data.img
       this.currentProductId = data.product_id
       this.ifModify = true
@@ -89,7 +90,7 @@ export class AdminComponent implements OnInit {
     if (pass || event.target.id === "backgroundPopup") {
       this.ifPopupAdd = false
       this.newProduct.reset()
-      this.pathImgPopup = "http://localhost:5000/imgs/add-photo.png"
+      this.pathImgPopup = this.shopService.GlobalyPath+"/imgs/add-photo.png"
       this.imgToAdd = "no-img.png"
       this.currentProductId = -1
       this.ifModify = false
@@ -101,7 +102,7 @@ export class AdminComponent implements OnInit {
     data.append('file', e.target.files[0])
     this.shopService.uploadImg(data).subscribe(
       (res: any) => {
-        this.pathImgPopup = `http://localhost:5000/products-imgs/${res.filename}`
+        this.pathImgPopup = this.shopService.GlobalyPath+`/products-imgs/${res.filename}`
         this.imgToAdd = res.filename
       },
       err => console.log(err)

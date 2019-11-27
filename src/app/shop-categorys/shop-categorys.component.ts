@@ -20,6 +20,7 @@ export class ShopCategorysComponent implements OnInit {
   public quantity = 1
   public theSearch = "";
   public messageHere = "Chose category or do a search"
+  public GlobalyPathInto = this.shopService.GlobalyPath;
 
   ngOnInit() {
     this.shopService.getcategorys().subscribe(

@@ -12,7 +12,7 @@ export class HomeInfoComponent implements OnInit {
 
   public countProducts = []
   public countOrders = []
-  @Input() toHomeInfo:object;
+  @Input() toHomeInfo;
 
   ngOnInit() {
     this.shopService.getinfo().subscribe(

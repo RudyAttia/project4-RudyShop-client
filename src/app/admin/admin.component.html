@@ -13,7 +13,7 @@
 <h3 id="messageHere">{{messageHere}}</h3>
 <div *ngIf="categoryProducts" id="catpro">
     <div *ngFor="let product of products" class="product" >
-        <img src="http://localhost:5000/products-imgs/{{product.img}}" alt="" class="productImg">
+        <img src="{{GlobalyPathInto}}/products-imgs/{{product.img}}" alt="" class="productImg">
         <br>
         <div class="productPrice">{{product.price}} ₪</div>
         <div>{{product.product_name}}</div>

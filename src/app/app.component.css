@@ -16,6 +16,10 @@ footer{
     align-items: center;
     font-size: 14px;
 }
+footer a{
+    color: white;
+    text-decoration: none;
+}
 #profil{
     display: flex;
     align-items: center;

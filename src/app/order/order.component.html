@@ -12,7 +12,7 @@
             </div>
             <div class="divitem" *ngFor="let item of arrList">
                 <div>
-                    <img class="imgItem" src="http://localhost:5000/products-imgs/{{item.img}}" alt="">
+                    <img class="imgItem" src="{{GlobalyPathInto}}/products-imgs/{{item.img}}" alt="">
                 </div>
                 <div class="displayItem">
                     <div class="itemName">{{item.product_name}}</div><br>
@@ -60,7 +60,7 @@
     <div id="popupSuccess" *ngIf="ifPopup">
         <div>
             <h2>YOUR PURCHASE WAS SUCCESSFUL</h2><br>
-            <h3>To download the receipt <a target="_blank" href="http://localhost:5000/receiptPDF/{{pathPdf}}" download="d{{pathPdf}}">click here</a></h3><br><br>
+            <h3>To download the receipt <a target="_blank" href="{{GlobalyPathInto}}/receiptPDF/{{pathPdf}}" download="d{{pathPdf}}">click here</a></h3><br><br>
             <a href="/" id="btnThank">THANK</a>
         </div>
     </div>

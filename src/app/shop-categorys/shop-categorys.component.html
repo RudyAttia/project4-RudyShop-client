@@ -12,7 +12,7 @@
 <div *ngIf="categoryProducts" id="catpro">
     
     <div *ngFor="let product of products" class="product" (click)="popupProduct(product)">
-        <img src="http://localhost:5000/products-imgs/{{product.img}}" alt="" class="productImg">
+        <img src="{{GlobalyPathInto}}/products-imgs/{{product.img}}" alt="" class="productImg">
         <br>
         <div class="productPrice">{{product.price}} ₪</div>
         <div>{{product.product_name}}</div>
@@ -22,7 +22,7 @@
 <div *ngIf='ifPopup' id="backgroundPopup" (click)='closePopup($event)'>
     <div id="popup">
         <div class="deleteCross" (click)="closePopupCross()">X</div>
-        <img src="http://localhost:5000/products-imgs/{{productPopup.img}}" alt="" class="prodimg">
+        <img src="{{GlobalyPathInto}}/products-imgs/{{productPopup.img}}" alt="" class="prodimg">
         <div>
             <div>{{productPopup.product_name}}</div><br>
             <div class="prodPrice">{{productPopup.price}} ₪</div><br>

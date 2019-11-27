@@ -13,6 +13,7 @@ export class ShopCartComponent implements OnInit {
   @Input() arrItems;
   @Input() totalPrice;
   public cartId = -1;
+  public GlobalyPathInto = this.shopService.GlobalyPath;
   @Output() chQuantity = new EventEmitter();
   @Output() delItem = new EventEmitter();
 

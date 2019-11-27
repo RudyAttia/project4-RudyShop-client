@@ -8,7 +8,7 @@
     <div *ngIf="cart == -1"><br> Cart empty</div>
     <div class="divitem" *ngFor="let item of arrItems">
         <div>
-            <img class="imgItem" src="http://localhost:5000/products-imgs/{{item.img}}" alt="">
+            <img class="imgItem" src="{{GlobalyPathInto}}/products-imgs/{{item.img}}" alt="">
         </div>
         <div class="displayItem">
             <div class="itemName">{{item.product_name}}</div><br>

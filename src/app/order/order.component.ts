@@ -27,6 +27,7 @@ export class OrderComponent implements OnInit {
   public datesProhibited = []
   public validDate = false
   public errorDate = ""
+  public GlobalyPathInto = this.shopService.GlobalyPath;
 
   ngOnInit() {
     this.shopService.ifToken().subscribe(
@@ -105,7 +106,9 @@ export class OrderComponent implements OnInit {
 
   public submitOrder(){
     this.btnOrder = "one moment ..."
-    this.shopService.addOrder({...this.dataOrder.value,user_id:this.user.t_z,cart_id:this.cart,total_price:this.totalPrice.toFixed(2),products:this.arrItems,user_name:this.user.first_name+" "+this.user.last_name}).subscribe(
+    let datenow = new Date();
+    let thedatenow = datenow.toISOString().split("T")[0];
+    this.shopService.addOrder({...this.dataOrder.value,user_id:this.user.t_z,cart_id:this.cart,total_price:this.totalPrice.toFixed(2),products:this.arrItems,user_name:this.user.first_name+" "+this.user.last_name,datenow:thedatenow}).subscribe(
       (res:any)=>{
         if(res.state = "success"){
           this.ifPopup=true;
