@@ -16,16 +16,18 @@ export class HomeInfoComponent implements OnInit {
 
   ngOnInit() {
     this.shopService.getinfo().subscribe(
-      (res: any) => {
-        let countp:string = res.message[0].countInfo.toString();
-        let counto:string = res.message[1].countInfo.toString();
+      (res:any) => {
+        if(res.message === 'No results!!!'){return}
+        console.log(res.message)
+        let countp:string = res.message.countp.toString();
+        let counto:string = res.message.counto.toString();
         for(let i=0; i<countp.length;i++){
           this.countProducts[i] = countp[i]
         }
         for(let j=0; j<counto.length;j++){
           this.countOrders[j] = counto[j]
         }
-      }
+      },err=>console.log(err)
     )
   }
 

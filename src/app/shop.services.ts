@@ -8,7 +8,7 @@ export class shopService {
 
   constructor(public http: HttpClient) { }
 
-    public GlobalyPath = 'http://localhost:5000'//'https://project4-rudyshop.herokuapp.com'
+    public GlobalyPath = 'http://localhost:5000' //'https://project4-rudyshop.herokuapp.com'
 
     public ifToken(){
       let token = localStorage.getItem('Token') || sessionStorage.getItem('Token');
